@@ -1,0 +1,12 @@
+---
+description: InEngine Calendar package conventions
+globs: "**/*"
+alwaysApply: true
+---
+
+# inengine/calendar
+
+- PHP `^8.5`; Pint + Pest + PHPStan like other InEngine packages.
+- This package owns **domain contracts and DTOs** (providers, events, calendar selection, query/cache). Do **not** put Google API clients here.
+- Host app (LTC #143) and adapters consume this package; Google lives in **`inengine/calendar-google-adapter`** (often called the **Calendar adapter** — repo/folder **`Calender-Google-Adapter`**).
+- Read **`.cursor/SESSION_HANDOFF.md`** at the start of substantive work (includes the two-package idea sketch).

@@ -1,0 +1,12 @@
+---
+description: Enforce PHP 8.5 and coding/testing standards for this InEngine package
+alwaysApply: true
+---
+
+# InEngine PHP package standards
+
+- Use PHP `^8.5`.
+- Follow PSR standards and Laravel/PHP community style guides for code structure and conventions.
+- Use Laravel Pint for formatting PHP changes.
+- Test every code change with Pest (run the smallest relevant test scope first, then broader suite when needed).
+- Keep package `composer.json` constraints aligned with host apps (e.g. LTC) when package compatibility allows it.

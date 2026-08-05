@@ -1,0 +1,10 @@
+---
+description: Ignore macOS .DS_Store in Git whenever it appears in the tree
+alwaysApply: true
+---
+
+# `.DS_Store` in Git
+
+When you find a **`.DS_Store`** file anywhere under a Git work tree (including nested dirs like `.github/`), ensure that repo’s **root `.gitignore`** includes **`.DS_Store`** so Git ignores it in all subdirectories. Prefer **not** committing these files; if one was already tracked, use **`git rm --cached -- path/to/.DS_Store`**.
+
+Keep **`.DS_Store`** alongside any existing patterns such as **`*.DS_Store`** (the latter does not always match the hidden file name alone).
