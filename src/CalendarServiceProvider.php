@@ -2,9 +2,9 @@
 
 namespace InEngine\Calendar;
 
+use InEngine\Calendar\Commands\CalendarCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use InEngine\Calendar\Commands\CalendarCommand;
 
 class CalendarServiceProvider extends PackageServiceProvider
 {
