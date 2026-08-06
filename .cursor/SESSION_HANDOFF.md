@@ -15,7 +15,7 @@ Issue **#143** (LTC home widgets) is two problems: an **app-facing calendar doma
 | Package | Owns |
 |--------|------|
 | **`inengine/calendar`** (this package) | Contracts (`CalendarProvider`, maybe `ReadsEvents` / `ListsCalendars`), DTOs (`Event`, `TimeRange`, `CalendarRef`), config for selected calendars, cache/query facade. Optional presentation primitives later — leave My LTC widgets in the host until UI settles. |
-| **`inengine/calendar-google-adapter`** (**Calendar adapter**) | Implements the provider against Google Calendar API; auth (service account / domain-wide or OAuth as chosen); maps Google payloads → DTOs; owns `google/apiclient` (or similar). Folder/repo spelling: **Calender-Google-Adapter**. Informal name in conversation: **Calendar adapter**. |
+| **`inengine/calendar-google-adapter`** (**Calendar adapter**) | Implements the provider against Google Calendar API; auth (service account / domain-wide or OAuth as chosen); maps Google payloads → DTOs; owns `google/apiclient` (or similar). Repo/folder: **`Calendar-Google-Adapter`**. Informal name: **Calendar adapter**. |
 
 **This package (core):** selection model (“these calendar IDs are school-wide upcoming / meals / schedule”), normalize timezones, merge/sort events from multiple sources, cache keys, rate-limit-friendly `eventsBetween($calendars, $from, $to)` + short TTL for v1, authorization hooks. Tests bind a **fake provider** without Google.
 
@@ -50,8 +50,8 @@ Issue **#143** (LTC home widgets) is two problems: an **app-facing calendar doma
 ### 2026-08-05 — Scaffold wired for LTC #143
 
 - **Status:** **In progress** with LTC **`issue-143-calendar-widgets`**.
-- **Package:** Spatie Laravel skeleton configured as **`inengine/calendar`** / namespace **`InEngine\Calendar`** (PHP **`^8.5`**). Still mostly skeleton (`Calendar` facade/provider) — domain contracts not built yet.
-- **Sibling:** Google provider lives in **`InEngine/Modules/Calender-Google-Adapter`** (note folder/repo spelling **Calender**) → Composer **`inengine/calendar-google-adapter`**.
+- **Package:** Spatie Laravel calendar configured as **`inengine/calendar`** / namespace **`InEngine\Calendar`** (PHP **`^8.5`**). Still mostly calendar (`Calendar` facade/provider) — domain contracts not built yet.
+- **Sibling:** Google provider lives in **`InEngine/Modules/Calendar-Google-Adapter`** → Composer **`inengine/calendar-google-adapter`**.
 - **Host (LTC):** path/`@dev` via gitignored **`composer.local.json`**; PHPStorm content roots + VCS mapping added on the LTC app module.
 - **Next:** design provider contracts + event DTOs; wire fake provider for tests; then Google adapter implementation for school calendars (upcoming / meals / schedule feeds).
 
